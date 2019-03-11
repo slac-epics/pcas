@@ -1,0 +1,12 @@
+#==============================================================
+#
+#  Name: RELEASE_NOTES
+#
+#  Rem: This files describes release notes for
+#       the pcas module.
+#==============================================================
+#
+R4.13.2-0.1.0:	Mar-11-2019 - Hugo Slepicka
+	- First version of pcas with SLACs GIT Workflow.
+		- pcas: fix misleading error message (TCP name resolution)
+		- fix library order for static builds
