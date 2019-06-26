@@ -67,6 +67,7 @@ aitGen_SRCS = aitTypes.c aitGen.c
 aitGen_CFLAGS_linux-arm = -O2
 
 CLEANS += $(COMMON_DIR)/aitConvertGenerated.cc
+CLEANS += $(COMMON_DIR)/gddApps.h
 
 USR_CXXFLAGS_Linux = -fno-strict-aliasing
 USR_CXXFLAGS_RTEMS = -fno-strict-aliasing
@@ -88,7 +89,9 @@ dbMapper$(DEP): $(COMMON_DIR)/gddApps.h
 # Rules for generated files
 #
 $(COMMON_DIR)/aitConvertGenerated.cc: $(AITGEN)
+	@$(RM) $@
 	$(AITGEN) $@
 
 $(COMMON_DIR)/gddApps.h : $(GENAPPS)
+	@$(RM) $@
 	$(GENAPPS) $@
