@@ -6,6 +6,9 @@
 #       the pcas module.
 #==============================================================
 #
+R4.13.2-0.2.0: 2021-07-20 Bruce Hill
+	subscriptionEventsPosted and subscriptionEventsProcessed need to be unsigned long.
+
 R4.13.2-0.1.0:	Mar-11-2019 - Hugo Slepicka
 	- First version of pcas with SLACs GIT Workflow.
 		- pcas: fix misleading error message (TCP name resolution)
