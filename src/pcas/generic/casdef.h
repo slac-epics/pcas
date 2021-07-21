@@ -263,8 +263,8 @@ public:
     // subscriptionEventsProcessed() 
     //      - number of events removed by server library from the event queue
     //
-    unsigned subscriptionEventsPosted () const;
-    unsigned subscriptionEventsProcessed () const;
+    unsigned long subscriptionEventsPosted () const;
+    unsigned long subscriptionEventsProcessed () const;
 
     class epicsTimer & createTimer ();
 

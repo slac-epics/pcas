@@ -154,17 +154,17 @@ class epicsTimer & caServer::createTimer ()
     return fileDescriptorManager.createTimer ();
 }
 
-unsigned caServer::subscriptionEventsProcessed () const
+unsigned long caServer::subscriptionEventsProcessed () const
 {
     if ( pCAS ) {
         return this->pCAS->subscriptionEventsProcessed ();
     }
     else {
-        return 0u;
+        return 0UL;
     }
 }
 
-unsigned caServer::subscriptionEventsPosted () const
+unsigned long caServer::subscriptionEventsPosted () const
 {
     if ( pCAS ) {
         return this->pCAS->subscriptionEventsPosted ();

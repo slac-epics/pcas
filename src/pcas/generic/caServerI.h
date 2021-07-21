@@ -67,9 +67,9 @@ public:
     casEventMask logEventMask () const;     // DBE_LOG registerEvent("log") 
     casEventMask alarmEventMask () const; // DBE_ALARM registerEvent("alarm") 
     casEventMask propertyEventMask () const; // DBE_PROPERTY registerEvent("property") 
-    unsigned subscriptionEventsProcessed () const;
+    unsigned long subscriptionEventsProcessed () const;
     void incrEventsProcessedCounter ();
-    unsigned subscriptionEventsPosted () const;
+    unsigned long subscriptionEventsPosted () const;
     void updateEventsPostedCounter ( unsigned nNewPosts );
     void generateBeaconAnomaly ();
     casMonitor & casMonitorFactory ( casChannelI &, 
@@ -96,8 +96,8 @@ private:
     beaconTimer & beaconTmr;
     beaconAnomalyGovernor & beaconAnomalyGov;
     unsigned debugLevel;
-    unsigned nEventsProcessed; 
-    unsigned nEventsPosted; 
+    unsigned long nEventsProcessed; 
+    unsigned long nEventsPosted; 
     unsigned ioInProgressCount;
 
     casEventMask valueEvent; // DBE_VALUE registerEvent("value")

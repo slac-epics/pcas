@@ -41,8 +41,8 @@ caServerI::caServerI ( caServer & tool ) :
     beaconTmr ( * new beaconTimer ( *this ) ),
     beaconAnomalyGov ( * new beaconAnomalyGovernor ( *this ) ),
     debugLevel ( 0u ),
-    nEventsProcessed ( 0u ),
-    nEventsPosted ( 0u ),
+    nEventsProcessed ( 0ul ),
+    nEventsPosted ( 0ul ),
     ioInProgressCount ( 0u )
 {
     assert ( & adapter != NULL );
@@ -199,7 +199,7 @@ void caServerI::updateEventsPostedCounter ( unsigned nNewPosts )
     this->nEventsPosted += nNewPosts;
 }
 
-unsigned caServerI::subscriptionEventsPosted () const
+unsigned long caServerI::subscriptionEventsPosted () const
 {
     epicsGuard < epicsMutex > guard ( this->diagnosticCountersMutex );
     return this->nEventsPosted;
@@ -211,7 +211,7 @@ void caServerI::incrEventsProcessedCounter ()
     this->nEventsProcessed ++;
 }
 
-unsigned caServerI::subscriptionEventsProcessed () const
+unsigned long caServerI::subscriptionEventsProcessed () const
 {
     epicsGuard < epicsMutex > guard ( this->diagnosticCountersMutex );
     return this->nEventsProcessed;
