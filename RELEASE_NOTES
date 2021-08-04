@@ -6,6 +6,9 @@
 #       the pcas module.
 #==============================================================
 #
+R4.13.2-0.3.0: 2021-08-04 Bruce Hill
+	Add timeStamp to dumpInfo() output
+
 R4.13.2-0.2.0: 2021-07-20 Bruce Hill
 	subscriptionEventsPosted and subscriptionEventsProcessed need to be unsigned long.
 
