@@ -13,6 +13,7 @@
 #include <stdio.h>
 #define epicsExportSharedSymbols
 #include "gdd.h"
+#include "epicsTime.h"
 
 // -----------------------test routines------------------------
 
@@ -49,6 +50,8 @@ void gdd::dumpInfo(void) const
 	unsigned long sz_tot,sz_data,sz_elem;
 	const aitIndex max=20u;
 	aitIndex prt_tot;
+	struct epicsTimeStamp	timeStamp;
+	getTimeStamp(&timeStamp);
 
 	sz_tot = getTotalSizeBytes();
 	sz_data = getDataSizeBytes();
@@ -59,6 +62,8 @@ void gdd::dumpInfo(void) const
 	fprintf(stderr,"----------dump This=%p---------\n", this);
 	fprintf(stderr," dimension=%u ", dimension());
 	fprintf(stderr,"app-type=%u ", applicationType());
+	fprintf(stderr,"secPastEpoch=%u ", timeStamp.secPastEpoch);
+	fprintf(stderr,"nsec=%u ", timeStamp.nsec);
 
 	if(isScalar()) fprintf(stderr,"Scalar\n");
 	if(isAtomic()) fprintf(stderr,"Atomic\n");
